@@ -11,9 +11,5 @@ class SubEmailAdmin(admin.ModelAdmin):
         'created_at',
         'updated_at',
     )
-    search_fields = (
-        'sub_email',
-    )
-    list_filter = (
-        'is_active',
-    )
+    search_fields = ('sub_email',)
+    list_filter = ('is_active',)
