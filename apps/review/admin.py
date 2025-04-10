@@ -13,10 +13,10 @@ class BlogReviewAdmin(admin.ModelAdmin):
         "created_at",
         "updated_at",
     )
-    list_filter = ('is_active', 'blog', 'user', 'rating',)
     search_fields = (
         'blog__name',
         'user__first_name',
         'user__last_name',
         'user__email',
     )
+    list_filter = ('is_active', 'blog', 'user', 'rating',)

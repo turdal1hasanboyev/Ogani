@@ -15,8 +15,11 @@ class BlogAdmin(admin.ModelAdmin):
         "created_at",
         "updated_at",
     )
-    prepopulated_fields = {'slug': ('name',)}
-    list_filter = ('is_active', 'category', 'author',)
+    list_filter = (
+        'is_active',
+        'category',
+        'author',
+    )
     search_fields = (
         'name',
         'category__name',
@@ -24,3 +27,4 @@ class BlogAdmin(admin.ModelAdmin):
         'author__last_name',
         'author__email',
     )
+    prepopulated_fields = {'slug': ('name',)}

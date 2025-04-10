@@ -10,7 +10,6 @@ admin.site.index_title = "Welcome to Ogani Admin Panel!"
 
 @admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
-    ordering = ('email',)
     list_display = (
         'id',
         'get_full_name',
@@ -33,6 +32,7 @@ class CustomUserAdmin(UserAdmin):
         'is_superuser',
         'is_staff',
     )
+    ordering = ('email',)
     fieldsets = (
         (None, {
             'fields': ('email', 'password',),
