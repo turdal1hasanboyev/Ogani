@@ -5,7 +5,8 @@ from apps.common.models import BaseModel
 
 class BlogCategory(BaseModel):
     name = models.CharField(max_length=225, db_index=True, unique=True)
-    slug = models.SlugField(max_length=225, unique=True, db_index=True, null=True, blank=True)
+    slug = models.SlugField(max_length=225, unique=True,
+                            db_index=True, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if not self.slug and self.name:
@@ -18,7 +19,8 @@ class BlogCategory(BaseModel):
 
 class BlogTag(BaseModel):
     name = models.CharField(max_length=225, db_index=True, unique=True)
-    slug = models.SlugField(max_length=225, unique=True, db_index=True, null=True, blank=True)
+    slug = models.SlugField(max_length=225, unique=True,
+                            db_index=True, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if not self.slug and self.name:
@@ -31,7 +33,8 @@ class BlogTag(BaseModel):
 
 class ProductCategory(BaseModel):
     name = models.CharField(max_length=225, db_index=True, unique=True)
-    slug = models.SlugField(max_length=225, unique=True, db_index=True, null=True, blank=True)
+    slug = models.SlugField(max_length=225, unique=True,
+                            db_index=True, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if not self.slug and self.name:
@@ -44,7 +47,8 @@ class ProductCategory(BaseModel):
 
 class ProductTag(BaseModel):
     name = models.CharField(max_length=225, db_index=True, unique=True)
-    slug = models.SlugField(max_length=225, unique=True, db_index=True, null=True, blank=True)
+    slug = models.SlugField(max_length=225, unique=True,
+                            db_index=True, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if not self.slug and self.name:
