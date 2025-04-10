@@ -15,16 +15,6 @@ class BlogAdmin(admin.ModelAdmin):
         "created_at",
         "updated_at",
     )
-    list_filter = (
-        'is_active',
-        'category',
-        'author',
-    )
-    search_fields = (
-        'name',
-        'category__name',
-        'author__first_name',
-        'author__last_name',
-        'author__email',
-    )
+    list_filter = ('is_active',)
+    search_fields = ('name',)
     prepopulated_fields = {'slug': ('name',)}
