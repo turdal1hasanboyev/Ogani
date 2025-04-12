@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 from apps.common.models import BaseModel
 
 
@@ -10,7 +11,7 @@ class Product(BaseModel):
                             blank=True, max_length=225, db_index=True)
     banner = models.ForeignKey(
         'banner.ProductBanner', on_delete=models.SET_NULL, null=True, related_name='product_banner')
-    description = models.TextField(null=True, blank=True)
+    description = RichTextField(null=True, blank=True)
     views_count = models.IntegerField(default=0)
     price = models.DecimalField(
         max_digits=10, decimal_places=2, default=0)

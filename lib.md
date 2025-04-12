@@ -1,3 +1,4 @@
+```
 asgiref==3.8.1
 Django==5.2
 django-ckeditor==6.7.2
@@ -9,3 +10,5 @@ psycopg==3.2.6
 sqlparse==0.5.3
 tabulate==0.9.0
 typing_extensions==4.13.2
+```
+12.04.2025!

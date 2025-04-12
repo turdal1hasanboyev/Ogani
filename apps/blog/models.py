@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 from apps.common.models import BaseModel
 from apps.user.models import CustomUser
 from apps.category.models import BlogCategory, BlogTag
@@ -10,7 +11,7 @@ class Blog(BaseModel):
     name = models.CharField(max_length=225, unique=True, db_index=True)
     slug = models.SlugField(unique=True, null=True,
                             blank=True, max_length=225, db_index=True)
-    description = models.TextField(null=True, blank=True)
+    description = RichTextField(null=True, blank=True)
     image = models.ImageField(upload_to='blogs', null=True, blank=True)
     category = models.ForeignKey(
         BlogCategory, on_delete=models.CASCADE, related_name='blog_category')

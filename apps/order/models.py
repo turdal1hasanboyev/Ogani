@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 from apps.common.models import BaseModel
 
 
@@ -13,7 +14,7 @@ class Order(BaseModel):
         'user.CustomUser', on_delete=models.SET_NULL, null=True, related_name="orders")
     phone_number = models.CharField(max_length=15, db_index=True)
     full_name = models.CharField(max_length=225, db_index=True)
-    notes = models.TextField(null=True, blank=True)
+    notes = RichTextField(null=True, blank=True)
     total_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     @property
